@@ -1,0 +1,38 @@
+syntax = "proto2";
+package com.jiayoo.protobuf;
+
+option optimize_for = SPEED;
+option java_package = "com.jiayoo.proto";
+option java_outer_classname = "MyDataInfo";
+
+message MyMessage {
+    enum DataType{
+        LoginType = 1;
+        RegisterType = 2;
+        ChangePassType = 3;
+        AddFriendType = 4;
+        DeleteFriendType = 5;
+        AddGroupType = 6;
+        DeleteGroupType = 7;
+    }
+
+
+    enum ResponseType{
+        LoginSuccess = 1;
+        RegisterSuccess = 2;
+        ChangePassSuccess = 3;
+        AddFriendTypeSuccess = 4;
+        DeleteFriendSuccess = 5;
+        AddGroupSuccess = 6;
+        DeleteGroupSuccess = 7;
+    }
+
+
+    optional DataType data_type = 1;
+    optional ResponseType response_type = 2;
+    optional string message = 3;
+
+}
+
+
+
